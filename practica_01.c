@@ -10,18 +10,22 @@ int main(){
 		vect[z]= rand();
 	}
 	
-	for (int i = 0;  i < 25; i ++){
-		for (int j = 0; j < (25 - i); j ++){
-			cont ++;
-			if (vect[j]>vect[j + 1]){
-				aux = vect[j];
-				vect[j] = vect[j + 1];
-				vect[j + 1] = aux;
-				cont ++;
-			}
-		}
-	}
-	for (int x = 0; x < 25; x ++){
-		printf("[%i]", vect[x]);
-	}
+	int vect[5] = {8,3,9,2,6};
+ +	
+ +	int aux;
+ +	
+ +	for (int i = 0; i < 5; i ++){
+ +		for (int j = 0; j < 5; j ++){
+ +			if (vect[j] > vect[i]){
+ +				aux = vect[i];
+ +				vect[i] = vect[j];
+ +				vect[j] = aux;
+ +			}
+ +		
+ +		}
+ +	}
+ +	printf("VECTOR ORDENADO \n");
+ +	for (int i = 0; i < 5; i ++){
+ +		printf("[%i]", vect[i]);
+ +	}
 }
